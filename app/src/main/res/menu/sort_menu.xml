@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ascDate"
+        android:title="Data Crescente" />
+
+    <item
+        android:id="@+id/descDate"
+        android:title="Data Decrescente" />
+    <item
+        android:id="@+id/ascWorkoutType"
+        android:title="Tipo de atividade Crescente" />
+    <item
+        android:id="@+id/descWorkoutType"
+        android:title="Tipo de atividade Decrescente" />
+</menu>

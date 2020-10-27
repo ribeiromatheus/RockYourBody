@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/edtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome da atividade"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edtDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descrição"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edtWorkoutDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Data da atividade"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/edtElapsedTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tempo decorrido"
+        android:inputType="text" />
+
+    <Spinner
+        android:id="@+id/spnWorkoutType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edtTravelledDistance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Distância percorrida"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar"
+        android:background="@color/colorPrimary"
+        android:textColor="#FFFFFF"/>
+
+</LinearLayout>
