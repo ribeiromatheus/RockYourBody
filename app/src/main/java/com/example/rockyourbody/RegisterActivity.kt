@@ -6,7 +6,6 @@ import android.widget.ArrayAdapter
 import com.example.rockyourbody.connection.WorkoutDatabase
 import com.example.rockyourbody.model.Atividade
 import kotlinx.android.synthetic.main.activity_register.*
-import kotlin.collections.ArrayList
 
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +26,7 @@ class RegisterActivity : AppCompatActivity() {
         val workoutDate = edtWorkoutDate.text.toString()
         val elapsedTime = edtElapsedTime.text.toString()
         val workoutType = spnWorkoutType.selectedItem.toString()
-        val travelledDistance = edtTravelledDistance.text.toString()
+        var travelledDistance = edtTravelledDistance.text.toString()
 
         val workout =
             Atividade(
@@ -39,21 +38,15 @@ class RegisterActivity : AppCompatActivity() {
                 travelledDistance
             )
 
-        val createWorkout = WorkoutDatabase.getInstance(this).workoutDAO()
+        if (workoutType == "Academia") {
+            travelledDistance
+        }
 
-        createWorkout.create(workout)
+        WorkoutDatabase.getInstance(this).workoutDAO().create(workout)
     }
 
     private fun fillSpinner() {
-        var workouts = ArrayList<String>()
-
-        workouts.add("Escolha uma atividade")
-        workouts.add("Corrida")
-        workouts.add("Caminhada")
-        workouts.add("Pedalada")
-        workouts.add("Academia")
-        workouts.add("Patinação")
-        workouts.add("Remo")
+        var workouts = resources.getStringArray(R.array.workoutType)
 
         val workoutList = ArrayAdapter(this, android.R.layout.simple_spinner_item, workouts)
 
