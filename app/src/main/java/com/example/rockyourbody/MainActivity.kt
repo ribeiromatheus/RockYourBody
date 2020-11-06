@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
 
+        lstWorkouts.setOnItemClickListener { _, _, position, _ -> goToDetail(position) }
+
         lstWorkouts.setOnItemLongClickListener { _, _, position, _ -> showAlertDialog(position) }
     }
 
@@ -77,5 +79,15 @@ class MainActivity : AppCompatActivity() {
         alertDialog.show()
 
         return true
+    }
+
+    private fun goToDetail(position: Int) {
+        val workoutDetails = lstWorkouts.getItemAtPosition(position) as Atividade
+
+        val intent = Intent(this, DetailActivity::class.java)
+
+        intent.putExtra("workoutDetails", workoutDetails)
+
+        startActivity(intent)
     }
 }
