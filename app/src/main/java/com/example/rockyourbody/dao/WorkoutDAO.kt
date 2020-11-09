@@ -20,6 +20,9 @@ interface WorkoutDAO {
     )
     fun read(attribute: String, sort: Int): List<Atividade>
 
+    @Query("SELECT * FROM Atividade WHERE tipoAtividade = :workoutType ORDER BY dataAtividade")
+    fun filterByWorkoutType(workoutType: String): List<Atividade>
+
     @Delete
     fun delete(workout: Atividade)
 }

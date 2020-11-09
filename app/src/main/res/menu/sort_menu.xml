@@ -3,7 +3,6 @@
     <item
         android:id="@+id/ascDate"
         android:title="Data Crescente" />
-
     <item
         android:id="@+id/descDate"
         android:title="Data Decrescente" />
@@ -13,4 +12,28 @@
     <item
         android:id="@+id/descWorkoutType"
         android:title="Tipo de atividade Decrescente" />
+    <item
+        android:id="@+id/WorkoutTypeFilter"
+        android:title="Filtrar por...">
+        <menu>
+            <item
+                android:id="@+id/running"
+                android:title="Corrida" />
+            <item
+                android:id="@+id/walk"
+                android:title="Caminhada" />
+            <item
+                android:id="@+id/rideBike"
+                android:title="Pedalada" />
+            <item
+                android:id="@+id/gym"
+                android:title="Academia" />
+            <item
+                android:id="@+id/skating"
+                android:title="Patinação" />
+            <item
+                android:id="@+id/rowing"
+                android:title="Remo" />
+        </menu>
+    </item>
 </menu>

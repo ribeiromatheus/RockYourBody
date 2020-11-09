@@ -44,6 +44,12 @@ class MainActivity : AppCompatActivity() {
             R.id.descDate -> loadList("date", 0)
             R.id.ascWorkoutType -> loadList("workoutType", 1)
             R.id.descWorkoutType -> loadList("workoutType", 0)
+            R.id.running -> filterByWorkoutType("Corrida")
+            R.id.walk -> filterByWorkoutType("Caminhada")
+            R.id.rideBike -> filterByWorkoutType("Pedalada")
+            R.id.gym -> filterByWorkoutType("Academia")
+            R.id.skating -> filterByWorkoutType("Patinação")
+            R.id.rowing -> filterByWorkoutType("Remo")
         }
 
         return super.onOptionsItemSelected(item)
@@ -55,6 +61,18 @@ class MainActivity : AppCompatActivity() {
                 .getInstance(this)
                 .workoutDAO()
                 .read(attribute, sort)
+
+        val workoutList = ArrayAdapter(this, android.R.layout.simple_list_item_1, workouts)
+
+        lstWorkouts.adapter = workoutList
+    }
+
+    private fun filterByWorkoutType(workoutType: String) {
+        val workouts: List<Atividade> =
+            WorkoutDatabase
+                .getInstance(this)
+                .workoutDAO()
+                .filterByWorkoutType(workoutType)
 
         val workoutList = ArrayAdapter(this, android.R.layout.simple_list_item_1, workouts)
 
