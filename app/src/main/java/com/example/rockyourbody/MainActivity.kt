@@ -7,12 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.ArrayAdapter
+import com.example.rockyourbody.adapter.ListAdapter
 import com.example.rockyourbody.connection.WorkoutDatabase
 import com.example.rockyourbody.model.Atividade
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class   MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
                 .workoutDAO()
                 .read(attribute, sort)
 
-        val workoutList = ArrayAdapter(this, android.R.layout.simple_list_item_1, workouts)
+        val workoutList = ListAdapter(workouts)
 
         lstWorkouts.adapter = workoutList
     }
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
                 .workoutDAO()
                 .filterByWorkoutType(workoutType)
 
-        val workoutList = ArrayAdapter(this, android.R.layout.simple_list_item_1, workouts)
+        val workoutList = ListAdapter(workouts)
 
         lstWorkouts.adapter = workoutList
     }
